@@ -1,6 +1,6 @@
 <h1>タスク更新フォーム</h1>
 
-<%= render 'error' %>
+<%= render 'error', task: @task %>
 
 <%= form_with model: @task, local: true do |form|%>
   <p>

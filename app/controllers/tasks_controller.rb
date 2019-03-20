@@ -1,10 +1,6 @@
 class TasksController < ApplicationController
 
-  before_action :set_params, only:[:show, :edit, :update, :destroy, ]
-
-  def set_params
-    @task = Task.find(params[:id])
-  end
+  before_action :set_params, only: [:show, :edit, :update, :destroy ]
 
   def new
     @task = Task.new
@@ -52,6 +48,10 @@ class TasksController < ApplicationController
 
     def task_params
       params.require(:task).permit(:title, :memo, :is_display, :status)
+    end
+
+    def set_params
+      @task = Task.find(params[:id])
     end
 
 end
